@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{E5A8C1F6-0B7C-4D35-CF69-7CBE3A5B9DA4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="pugmem">
+      <UniqueIdentifier>{F6B9D207-1C8D-4E46-D07A-8DCF4B6C0EB5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\pattern.cpp">
+      <Filter>pugmem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\process.cpp">
+      <Filter>pugmem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\syscall.cpp">
+      <Filter>pugmem</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
