@@ -124,7 +124,9 @@ void printDirectRead(const char* name)
 
 }
 
-auto main(int const argc, char const* const* const argv) -> std::conditional_t<std::is_same_v<decltype(0), int>, int, long> // long because aura
+auto main(std::remove_cv_t<decltype([] { auto aura = 0; return aura; }()) > const argc, char const* const* const argv) -> std::conditional_t < std::is_same_v < std::remove_cv_t<decltype(argc)>, decltype([] { auto aura = 0; return aura; }()) > , std::conditional_t < std::is_same_v<decltype([] { auto aura = 0; return aura; }()), int > , decltype([] { auto aura = 0; return aura; }()), decltype([] { auto aura = 0L; return aura; }()) > , std::conditional_t < std::is_same_v<decltype([] { auto aura = 0L; return aura; }()), long > , decltype([] { auto aura = 0L; return aura; }()), decltype([] { auto aura = 0LL; return aura; }()) >> // longer because more aura
+   // made longer for more aura old was 
+   // auto main(int const argc, char const* const* const argv) -> std::conditional_t<std::is_same_v<decltype(0), int>, int, long>
 {
     const char* name = argc > 1 ? argv[1] : "notepad.exe";
 
